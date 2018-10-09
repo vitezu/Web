@@ -1,0 +1,17 @@
+﻿@model WebStory.Models.Book
+
+<h2>Удаление книги</h2>
+<br/>
+<p>Книга</p>
+@Html.DisplayFor(m => m.Name)
+
+<p>Автор</p>
+@Html.DisplayFor(m => m.Author)
+
+<p>Цена</p>
+@Html.DisplayFor(m => m.Price)
+<br/>
+@using (@Html.BeginForm())
+{
+<input type="submit" value="Удалить" />
+}

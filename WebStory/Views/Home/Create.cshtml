@@ -1,0 +1,25 @@
+﻿@model WebStory.Models.Book
+
+<h2>Добавление книги</h2>
+
+@using (@Html.BeginForm())
+{
+        <p>
+            @Html.LabelFor(m => m.Name, "Название книги")
+            <br />
+            @Html.EditorFor(m => m.Name)
+        </p>
+        <p>
+            @Html.LabelFor(m => m.Author, "Автор")
+            <br />
+            @Html.EditorFor(m => m.Author)
+        </p>
+        <p>
+            @Html.LabelFor(m => m.Price, "Цена")
+            <br />
+            @Html.EditorFor(m => m.Price)
+        </p>
+        <p>
+            <input type="submit" value="Добавить" />
+        </p>
+}

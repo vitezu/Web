@@ -48,6 +48,45 @@ namespace WebStory.Controllers
             return RedirectToAction("Index");
         }
 
+        [HttpGet]
+        public ActionResult Create()
+        {
+            return View();
+        }
+
+        [HttpPost]
+        public ActionResult Create(Book book)
+        {
+            db.Books.Add(book);
+            db.SaveChanges();
+            return RedirectToAction("Index");
+        }
+
+        [HttpGet]
+        public ActionResult Delete (int id)
+        {
+            Book book = db.Books.Find(id);
+            if(book == null)
+            {
+                return HttpNotFound();
+            }
+            return View(book);
+        } 
+
+        [HttpPost, ActionName("Delete")]
+        public ActionResult DeleteConfirmed (int id)
+        {
+            Book book = db.Books.Find(id);
+            if(book != null)
+            {
+                db.Books.Remove(book);
+                db.SaveChanges();
+                return RedirectToAction("Index");
+            }
+            return HttpNotFound();
+        }
+
+
         public ActionResult About()
         {
             ViewBag.Message = "Your application description page.";

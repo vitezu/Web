@@ -1,0 +1,38 @@
+﻿@model Soccer.Models.Player
+<h2>Добавление игрока</h2>
+
+@using (Html.BeginForm())
+{
+
+<p>
+    Игрок  <br />
+    @Html.EditorFor(m => m.Name)
+</p>
+
+
+<p>
+    Позиция <br />
+    @Html.EditorFor(m => m.Position)
+</p>
+
+
+
+<p>
+    Возраст <br />
+    @Html.EditorFor(m => m.Age)
+</p>
+
+
+
+<p>
+    Команда <br />
+    @Html.DropDownListFor(m => m.TeamId, ViewBag.Teams as SelectList)
+</p>
+
+<p>
+<input type="submit" value="Добавить"
+</p>
+}
+<div>
+    @Html.ActionLink("К списку игроков", "Index")
+</div>

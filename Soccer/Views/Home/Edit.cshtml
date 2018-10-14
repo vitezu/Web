@@ -1,0 +1,54 @@
+﻿@model Soccer.Models.Player
+
+
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Edit</title>
+</head>
+<h2>Редактирование игрока</h2>
+<body>
+    @using (Html.BeginForm())
+    {
+        <legend>Футболист</legend>
+        <fieldset>
+            @Html.HiddenFor(m=>m.Id)
+            <p>
+                Игрок  <br />
+                @Html.EditorFor(m => m.Name)
+            </p>
+
+
+            <p>
+                Позиция <br />
+                @Html.EditorFor(m => m.Position)
+            </p>
+
+
+
+            <p>
+                Возраст <br />
+                @Html.EditorFor(m => m.Age)
+            </p>
+
+
+
+            <p>
+                Команда <br />
+                @Html.DropDownListFor(m => m.TeamId, ViewBag.Teams as SelectList)
+            </p>
+
+            <p>
+                <input type="submit" value="Редактировать"
+            </p>
+        </fieldset>
+    }
+
+    <div>
+        @Html.ActionLink("Вернуться к списку игроков", "Index")
+    </div>
+</body>
+</html>

@@ -1,0 +1,31 @@
+﻿@using University.Models
+@model Student
+
+@{
+    ViewBag.Title = "Create";
+}
+
+
+@using (Html.BeginForm())
+{
+    <fieldset>
+        <div class="editor-label"><b>Имя</b></div>
+        <div class="editor-field">
+            @Html.EditorFor(m => m.Name)
+        </div>
+
+        <div class="editor-label"><b>Курсы</b></div>
+        <div>
+            @foreach (Course c in ViewBag.Courses)
+            {
+                
+                    <input type="checkbox" name="selectedCourses" value="@c.Id" />@c.Name<br />
+                   
+                }
+            <p>
+                <input type="submit" value="Сохранить" />
+            </p>
+        </div>
+    </fieldset>
+}
+

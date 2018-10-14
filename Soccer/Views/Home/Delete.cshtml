@@ -1,0 +1,41 @@
+﻿@model Soccer.Models.Player
+
+
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Delete</title>
+</head>
+<body>
+    <h3>Удаление игрока</h3>
+    <div>
+        <h4>Игрок</h4>
+        <p>
+            Имя <br />
+            @Html.DisplayFor(m => m.Name)
+        </p>
+
+        <p>
+            Позиция <br />
+            @Html.DisplayFor(m => m.Position)
+        </p>
+        <p>
+            Возраст <br />
+            @Html.DisplayFor(m => m.Age)
+        </p>
+
+
+
+        @using (Html.BeginForm())
+        {
+            <div>
+                <input type="submit" value="Удалить" /> |
+                @Html.ActionLink("Back to List", "Index")
+            </div>
+        }
+    </div>
+</body>
+</html>

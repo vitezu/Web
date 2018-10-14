@@ -1,0 +1,37 @@
+﻿@using University.Models
+@model Student
+
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Detail</title>
+</head>
+<body>
+    <div>
+        <h4>Student</h4>
+        
+            <dt>
+                @Html.DisplayNameFor(model => model.Name)
+            </dt>
+    
+            <dd>
+                @Html.DisplayFor(model => model.Name)
+            </dd>
+    
+        
+        <div>
+            <p>Курсы</p>
+            <ul>
+                @foreach (Course c in Model.Courses)
+                {
+                    <li>@c.Name</li>
+                }
+            </ul>
+        </div>
+    </div>
+    
+</body>
+</html>

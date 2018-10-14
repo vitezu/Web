@@ -1,0 +1,31 @@
+﻿@using University.Models
+@model Student
+
+@{
+    ViewBag.Title = "Edit";
+}
+
+
+@using (Html.BeginForm())
+{
+<fieldset>
+    <div class="editor-label"><b>Имя</b></div>
+    <div class="editor-field">
+        @Html.EditorFor(m => m.Name)
+    </div>
+
+    <div class="editor-label"><b>Курсы</b></div>
+    <div>
+        @foreach (Course c in ViewBag.Courses)
+        {
+            <div>
+                <input type="checkbox" name="selectedCourses" value="@c.Id"
+                       @(Model.Courses.Contains(c) ? "checked = \"checked\"" : "") />@c.Name<br />
+                </div>
+            }
+        <p>
+            <input type="submit" value="Сохранить" />
+        </p>
+    </div>
+</fieldset>
+}

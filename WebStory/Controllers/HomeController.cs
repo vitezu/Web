@@ -18,6 +18,48 @@ namespace WebStory.Controllers
             return View(db.Books);
         }
 
+        public ActionResult Array ()
+        {
+            return View();
+        }
+
+        [HttpPost]
+        public string Array (string[] names)
+        {
+            string fin = "";
+            for(int i = 0; i<names.Length; i++)
+            {
+                fin += names[i] + "; ";
+            }
+            return fin;
+        }
+
+        public ActionResult Add()
+        {
+            return View(db.Books.ToList());
+        }
+
+        [HttpPost]
+        public string Add(List<Book> books)
+        {
+
+            return books.Count().ToString();
+
+        }
+
+
+        public ActionResult Author()
+        {
+            return View();
+        }
+
+        [HttpPost]
+        public ActionResult Author(Author author)
+        {
+            return View();
+        }
+
+
         public ActionResult BookView(int id)
         {
             Book book = db.Books.Find(id);

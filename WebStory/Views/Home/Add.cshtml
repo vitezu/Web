@@ -1,0 +1,30 @@
+﻿@using WebStory.Models
+@model List<Book>
+
+
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Add</title>
+</head>
+<body>
+    <div>
+
+      
+        using (Html.BeginForm())
+        {
+        @for (int i = 0; i < Model.Count; i++)
+        {
+        <p>Книга № @i+1</p>
+        @: Name: @Html.EditorFor(m => m[i].Name)
+        @: Author: @Html.EditorFor(m => m[i].Author)
+        @: Price: @Html.EditorFor(m => m[i].Price)
+        }
+        <input type="submit"value="сохранить"
+        }
+    </div>
+</body>
+</html>

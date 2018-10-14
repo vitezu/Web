@@ -158,6 +158,16 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201810081825068_InitialCreate.cs" />
+    <Compile Include="Migrations\201810081825068_InitialCreate.Designer.cs">
+      <DependentUpon>201810081825068_InitialCreate.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201810141402181_MigrateDB.cs" />
+    <Compile Include="Migrations\201810141402181_MigrateDB.Designer.cs">
+      <DependentUpon>201810141402181_MigrateDB.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\Configuration.cs" />
+    <Compile Include="Models\Author.cs" />
     <Compile Include="Models\Book.cs" />
     <Compile Include="Models\BookContext.cs" />
     <Compile Include="Models\Purchase.cs" />
@@ -215,8 +225,18 @@
     <Content Include="Views\Store\Details.cshtml" />
     <Content Include="Views\Store\Edit.cshtml" />
     <Content Include="Views\Store\Index.cshtml" />
+    <Content Include="Views\Home\Array.cshtml" />
+    <Content Include="Views\Home\Add.cshtml" />
+    <Content Include="Views\Home\Author.cshtml" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <EmbeddedResource Include="Migrations\201810081825068_InitialCreate.resx">
+      <DependentUpon>201810081825068_InitialCreate.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201810141402181_MigrateDB.resx">
+      <DependentUpon>201810141402181_MigrateDB.cs</DependentUpon>
+    </EmbeddedResource>
+  </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff2" />
     <Content Include="fonts\glyphicons-halflings-regular.woff" />

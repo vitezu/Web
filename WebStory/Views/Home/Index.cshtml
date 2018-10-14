@@ -1,6 +1,6 @@
-﻿@*@using  WebStory.Models*@
+﻿@using  WebStory.Models
 
-@model IEnumerable<WebStory.Models.Book>
+@model IEnumerable<Book>
 
 @{
     ViewBag.Title = "Home Page";
@@ -15,7 +15,7 @@
         <td></td>
     </tr>
 
-    @foreach (WebStory.Models.Book b in Model)
+    @foreach (var b in Model)
     {
         <tr>
             <td><p>@b.Name</p></td>

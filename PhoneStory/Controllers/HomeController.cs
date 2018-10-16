@@ -34,5 +34,11 @@ namespace PhoneStory.Controllers
 
             return View();
         }
+        public ActionResult MyTemplate()
+        {
+           
+
+            return View();
+        }
     }
 }

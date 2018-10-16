@@ -18,6 +18,19 @@ namespace WebStory.Controllers
             return View(db.Books);
         }
 
+        public ActionResult ViewB()
+        {
+            Book book = new Book { Name = "Tom Soyer", Author = "Author", Price = 230 };
+            return View(book);
+        }
+
+        public ActionResult Detail()
+        {
+            Book book = new Book { Name = "Tom Soyer", Author = "Author", Price = 230 };
+            return View(book);
+        }
+
+
         public ActionResult Array ()
         {
             return View();

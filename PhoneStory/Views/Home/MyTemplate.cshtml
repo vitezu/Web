@@ -1,0 +1,32 @@
+﻿@model PhoneStory.Models.Phone
+ 
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>MyTemplate</title>
+</head>
+<body>
+<h2>MyTemplate</h2>
+<table>
+     <tr>
+        <td>
+           <b> @Html.DisplayNameFor(model => model.Model) </b>
+        </td>
+ 
+        <td>
+            @Html.DisplayFor(model => model.Model)
+        </td>
+     </tr>
+     <tr>
+        <td>
+           <b> @Html.DisplayNameFor(model => model.Producer) </b>
+        </td>
+ 
+        <td>
+            @Html.DisplayFor(model => model.Producer)
+        </td>
+     </tr>
+</table>
+</body>
+</html>

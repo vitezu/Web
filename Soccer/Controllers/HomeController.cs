@@ -12,10 +12,47 @@ namespace Soccer.Controllers
     {
         SoccerContext db = new SoccerContext();
 
-        public ActionResult Index()
+        public ActionResult Index(int? team, string position, int? age)
         {
-            var players = db.Players.Include(p => p.Team);
-            return View(players.ToList());
+            IQueryable<Player> players = db.Players.Include(p => p.Team);
+            if (team != null && team != 0)
+            {
+                players = players.Where(p => p.TeamId == team);
+            }
+           
+            if   (!String.IsNullOrEmpty(position) && !position.Equals("Все"))
+            {
+                players = players.Where(p => p.Position == position);
+            }
+            if(age !=null && age != 0) 
+            {
+                players = players.Where(p => p.Age == age);
+            }
+
+            List<Team> teams = db.Teams.ToList();
+            teams.Insert(0, new Team { Name = "Все", Id = 0 });
+
+            PlayersListViewModel plvm = new PlayersListViewModel
+            {
+                Players = players.ToList(),
+                Teams = new SelectList(teams, "Id", "Name"),
+                Position = new SelectList(new List<string>
+                {
+                    "Все",
+                    "Нападающий",
+                    "Защитник",
+                    "Вратарь"
+                }
+                ),
+                Age = new SelectList(new List<int>
+                {
+                   0,20,21,22,23,24,25,26,27,28,29,30
+                })
+            };
+
+
+            return View(plvm);
+          
         }
 
         public ActionResult DetailTeam (int? id)

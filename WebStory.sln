@@ -13,6 +13,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PhoneStory", "PhoneStory\Ph
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Menu", "Menu\Menu.csproj", "{2EE9F30F-2E9A-465B-A5F1-686473302A80}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BookStore", "BookStore\BookStore.csproj", "{D6C605BD-211E-4118-8334-A9D7E941DA55}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -39,6 +41,10 @@ Global
 		{2EE9F30F-2E9A-465B-A5F1-686473302A80}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{2EE9F30F-2E9A-465B-A5F1-686473302A80}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{2EE9F30F-2E9A-465B-A5F1-686473302A80}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D6C605BD-211E-4118-8334-A9D7E941DA55}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D6C605BD-211E-4118-8334-A9D7E941DA55}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D6C605BD-211E-4118-8334-A9D7E941DA55}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D6C605BD-211E-4118-8334-A9D7E941DA55}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

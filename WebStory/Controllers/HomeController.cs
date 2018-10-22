@@ -141,6 +141,12 @@ namespace WebStory.Controllers
             return HttpNotFound();
         }
 
+        public ActionResult GetFirstBook()
+        {
+            Book book = db.Books.FirstOrDefault();
+            return View(book);
+        }
+
 
         public ActionResult About()
         {

@@ -17,7 +17,13 @@ namespace Menu
                 name: "Default",
                 url: "{controller}/{action}/{id}",
                 defaults: new { controller = "Home", action = "Index", id = UrlParameter.Optional }
+                //constraints: new { controller = "^H.*", id = @"\d{2}"}
             );
+            //routes.MapRoute(
+            //    name: "Default2",
+            //    url: "{controller}/{action}/{id}",
+            //    defaults: new { controller = "Home", action = "Index", id = UrlParameter.Optional }
+            //);
         }
     }
 }

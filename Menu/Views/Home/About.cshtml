@@ -4,4 +4,10 @@
 <h2>@ViewBag.Title.</h2>
 <h3>@ViewBag.Message</h3>
 
+@Html.ActionLink("Ссылка", "Index");
+@Html.ActionLink("Ссылка 2", "Index", "Book", new {id = 4}, null)
+@Html.RouteLink("Ссылка 3", new {controller = "Book",  action = "Index", id = 10})
+
+
+<script src='@Url.Content("~Scripts/jquery-3.3.1.intellisense.js")'></script>
 <p>Use this area to provide additional information.</p>

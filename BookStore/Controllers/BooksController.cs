@@ -15,6 +15,15 @@ namespace BookStore.Controllers
     {
         private BookContext db = new BookContext();
 
+        [HttpGet]
+        public JsonResult CheckName(string name)
+        {
+            var result = !(name == "Пушкин");
+            return Json(result, JsonRequestBehavior.AllowGet);
+        }
+
+       
+
         // GET: Books
         public ActionResult Index()
         {
@@ -47,7 +56,7 @@ namespace BookStore.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "Id,Name,Author,Year")] Book book)
+        public ActionResult Create([Bind(Include = "Id,Name,Author,Year,Email")] Book book)
         {
             if (ModelState.IsValid)
             {
@@ -79,7 +88,7 @@ namespace BookStore.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "Id,Name,Author,Year")] Book book)
+        public ActionResult Edit([Bind(Include = "Id,Name,Author,Year,Email")] Book book)
         {
             if (ModelState.IsValid)
             {
